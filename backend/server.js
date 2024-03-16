@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.send(users);
 });
 
-app.post("/", (req, res) => {
+app.post("/register", (req, res) => {
     const {email} = req.body
 
     const existingUser = users.find(user => user.email === email)
