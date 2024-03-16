@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"
 
 const PORT = 8080;
 
@@ -6,6 +7,8 @@ const app = express();
 
 // JSON middleware
 app.use(express.json())
+app.use(cors())
+
 
 const users = [
     {name: "john", email: "john@email.com", password: "john123"}, {
