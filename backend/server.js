@@ -22,6 +22,13 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+    const {email} = req.body
+
+    const existingUser = users.find(user => user.email === email)
+    if (existingUser) {
+        return res.status(400).send("Email already exists")
+    }
+
     res.status(201).send("Created user")
     users.push(req.body)
 })
