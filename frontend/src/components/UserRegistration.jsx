@@ -21,15 +21,19 @@ const UserRegistration = () => {
     }, [products]);
 
     // todo: post to 8080/
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
 
-        console.log(name, email, password)
-
         const user = {
-            // add with use state
-            // name, email, password
+            name,
+            email,
+            password
         }
+
+        // todo: send data to server
+        const response = await axios.post("http://localhost:8080/", user)
+        console.log(response);
+        console.log(response.data);
     }
 
     return (
