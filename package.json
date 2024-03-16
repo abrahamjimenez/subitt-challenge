@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "concurrently",
+    "dev": "concurrently \"nodemon backend/server.js\" \"npm run start --prefix frontend\" ",
     "prettier": "prettier frontend/src backend --write"
   },
   "keywords": [],
