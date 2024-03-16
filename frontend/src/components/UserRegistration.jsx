@@ -3,6 +3,9 @@ import axios from "axios";
 
 const UserRegistration = () => {
     const [products, setProducts] = useState([]);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -17,20 +20,28 @@ const UserRegistration = () => {
         console.log(products)
     }, [products]);
 
+    // todo: post to 8080/
     const submitHandler = (e) => {
         e.preventDefault()
+
+        console.log(name, email, password)
+
+        const user = {
+            // add with use state
+            // name, email, password
+        }
     }
 
     return (
         <form onSubmit={submitHandler}>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name"/>
+            <input type="text" name="name" id="name" onChange={(e) => setName(e.target.value)}/>
 
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email"/>
+            <input type="email" name="email" id="email" onChange={(e) => setEmail(e.target.value)}/>
 
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password"/>
+            <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}/>
 
             <button type="submit">Submit</button>
         </form>
