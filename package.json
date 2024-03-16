@@ -1,0 +1,16 @@
+{
+  "name": "subitt-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently",
+    "prettier": "prettier frontend/src backend --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "3.2.5"
+  }
+}
