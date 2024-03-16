@@ -6,8 +6,7 @@ const UserRegistration = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [sucessMessage, setSucessMessage] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,10 +37,10 @@ const UserRegistration = () => {
       await axios.post("http://localhost:8080/register", user);
 
       console.log("user created successfully");
-      setSucessMessage("User created successfully");
+      setMessage("User created successfully");
     } catch (e) {
       console.log("email already exists");
-      setErrorMessage("Email already exists");
+      setMessage("Email already exists");
     }
   };
 
@@ -78,9 +77,7 @@ const UserRegistration = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {sucessMessage && <p>{sucessMessage}</p>}
-
-      {errorMessage && <p>{errorMessage}</p>}
+      {message && <p>{message}</p>}
     </>
   );
 };
