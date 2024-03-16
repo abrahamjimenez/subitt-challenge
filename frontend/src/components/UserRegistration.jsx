@@ -20,7 +20,7 @@ const UserRegistration = () => {
         console.log(products)
     }, [products]);
 
-    // todo: post to 8080/
+    // post to 8080
     const submitHandler = async (e) => {
         e.preventDefault()
 
@@ -30,7 +30,7 @@ const UserRegistration = () => {
             password
         }
 
-        // todo: send data to server
+        // send data to server
         const response = await axios.post("http://localhost:8080/", user)
         console.log(response);
         console.log(response.data);
