@@ -1,0 +1,15 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "name": "abe",
+  "email": "abe@email.com",
+  "password": "abe123"
+}
+
+###
+
+GET http://localhost:8080/
+Accept: application/json
+
+###
